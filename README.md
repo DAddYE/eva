@@ -1,7 +1,7 @@
 # Eva
 
 Eva is an effortless event driven micro framework that runs on Ruby (cruby and jruby) through
-[eventmachine](http://eventmachine.rubyforge.org)
+[eventmachine](http://eventmachine.rubyforge.org) with a different **syntax**.
 
 The common problem with *EventMachine* is to deal with callbacks, fortunately thanks to
 people like [Ilya Grigorik](https://github.com/igrigorik) and `things`
@@ -11,9 +11,11 @@ a bit far to be _native_ like in `javascript`.
 So here my idea to make **experiment** and try to figure out a new way to write better our applications
 following the nature of the reactor pattern with a special focus on **simplicity** and **clearity**.
 
+
 ## Overview
 
-It's **pure ruby**, no lexers and parsers.
+It's **pure ruby**, no lexers and parsers. If you want a fast tast on how it looks like, 
+please see [emitter](https://github.com/DAddYE/eva/blob/master/lib/eva/emitter.rb)
 
 The _idea_ behind it is to build all our apps only using two ruby objects: `namespaces` and `objectspace`
 

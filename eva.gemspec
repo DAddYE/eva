@@ -8,9 +8,9 @@ Gem::Specification.new do |gem|
   gem.version       = Eva::VERSION
   gem.authors       = ['DAddYE']
   gem.email         = ['info@daddye.it']
-  gem.summary       = 'A different approach to write your ruby apps'
+  gem.summary       = 'Effortless event driven micro framework with a tasty syntax'
   gem.description   = gem.summary
-  gem.homepage      = 'https://github.com/eva.rb'
+  gem.homepage      = 'https://github.com/DAddYE/eva'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
