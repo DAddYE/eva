@@ -72,6 +72,7 @@ namespace :Circle,
 
   big_calc: -> do
     perform_a_big_calc
+  end
 
 LotOfNumbers.each &Circle.area
 defer Circle.big_calc
@@ -96,7 +97,7 @@ namespace :Greater,
   end
 ```
 
-Remember that it's ruby so in a _real_ you can include extend other objects like:
+Remember that it's ruby so you can include extend other objects like:
 
 ```rb
 module OldModule
@@ -141,10 +142,11 @@ greater.say_hello! # <<<<< REMBEMBER THAT IF WE DON'T HAVE ARGUMENT TO ADD A ! o
 
 In **eva** there are some special _keys_:
 
-* initialize: used only for **objects**
-* include: to include a module
-* extend: to extend an object with the given module
-* attr_reader, attr_writer, attr_accessor: to create attributes for **objects** and **spaces**
+* `initialize`: used only for **objects**
+* `include`: to include a module
+* `extend`: to extend an object with the given module
+* `attr_reader, attr_writer, attr_accessor, attr`: to create attributes for **objects** and **spaces**
+* `alias_method`
 
 Finally if you need to create `private` methods you can do that only prefixing with `_`
 
@@ -155,14 +157,16 @@ objectspace :Tester,
   attr_reader: [:a, :b, :c],
   attr_writer: [:d, :e, :f],
   attr_accessor: [:g, :h, :i],
-  foo: -> { p [:alias, :bar] },
-  alias_method: { :bar => :foo },
-  say: MyMod.say, # this is a delegate
   initialize: -> do
     @a, @b, @c = 1, 2, 3
     f = foo
-    say f
-  end
+    say
+  end,
+  foo: -> { p [:alias, :bar] },
+  alias_method: { :bar => :foo },
+  say: MyMod.say, # this is a delegate
+
+Tester.new
 ```
 
 ## Evented
